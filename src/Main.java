@@ -2,6 +2,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -15,34 +18,21 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
+import University.Student;
+import University.University;
+import University.myTest;
+import GUI.*;
+
 public class Main {
-
+	
 	public static void main(String[] args) {
+		
+		University uni = new University();
+		
+		MainGUI.main(uni);
+		
+//		runTests();
 				
-		Student student_1 = new Student("john", "Smith", 4, 8, 1995, "Coventry");
-		Student student_2 = new Student("dsfds", "sdfds", 4, 6, 4535, "Coventry");
-		Student student_3 = new Student("aeear", "adsad", 5, 67, 345435, "Coventry");
-		
-		ArrayList<Student> students = new ArrayList<Student>();
-		students.add(student_1);
-		students.add(student_2);
-		students.add(student_3);
-		
-		runTests();
-				
-//		try {
-//			JAXBContext jaxbContext = JAXBContext.newInstance("jaxbFiles");
-//		    Unmarshaller u = jaxbContext.createUnmarshaller();
-//		    Object o = u.unmarshal( new File( "H:\\Documents\\College\\207IT_APRL_17\\Teaching Materials\\Week_3\\Students.xml" ) );
-//		    ObjectFactory of = new ObjectFactory();
-//		    
-//		    System.out.println(o.getClass());
-//		} catch (JAXBException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-
-		
 	}
 	
 	public static void runTests() {
